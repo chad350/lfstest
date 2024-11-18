@@ -25,6 +25,6 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        Vector3 direction
+        //Vector3 direction
     }
 }
