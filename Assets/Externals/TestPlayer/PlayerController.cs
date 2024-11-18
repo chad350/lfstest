@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     private Vector2 curMovementInput;
-    public float jumpPower;
     public LayerMask groundLayerMask;
 
     [Header("Look")]
@@ -70,14 +69,6 @@ public class PlayerController : MonoBehaviour
         else if(context.phase == InputActionPhase.Canceled)
         {
             curMovementInput = Vector2.zero;
-        }
-    }
-
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        if(context.phase == InputActionPhase.Started && IsGrounded())
-        {
-            _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
         }
     }
 
