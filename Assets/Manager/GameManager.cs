@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -18,14 +16,28 @@ public class GameManager : MonoBehaviour
         }
        
     }
-    void Start()
-    {
-        
-    }
+    
+    public SoundManager soundManager { get; private set; }
+    public UIManager uiManager { get; private set; }
 
-  
-    void Update()
+    private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if(instance != null)
+            {
+                Destroy(gameObject);
+            }
+        }
         
+        soundManager = GetComponent<SoundManager>(); //find로 할지 고민하는중
+        uiManager = GetComponent<UIManager>();
     }
+    
+    
 }
