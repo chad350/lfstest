@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class TestPlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
@@ -32,15 +32,15 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; // Ä¿¼­ º¸ÀÌÁö ¾Ê°Ô
+        Cursor.lockState = CursorLockMode.Locked; // Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½
     }
 
-    void FixedUpdate() // ¹°¸®¿¬»ê(rigid body)À» »ç¿ëÇÒ ¶§¿¡´Â ÀÏÁ¤ÇÑ °£°ÝÀ¸·Î ¾÷µ¥ÀÌÆ® µÇ¾î¾ß ÇØ¼­ (ÀÏÁ¤ÇÑ ¿òÁ÷ÀÓ?)
+    void FixedUpdate() // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(rigid body)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ç¾ï¿½ï¿½ ï¿½Ø¼ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?)
     {
         Move();
     }
 
-    private void LateUpdate() // ¸ðµç Update°¡ ¿Ï·áµÈ ÈÄ ÃÖÁ¾ÀûÀ¸·Î µû¶ó°¡°Ô ÇÏ±â À§ÇØ. Ä«¸Þ¶ó°¡ Á¦ÀÏ ¸¶Áö¸·À¸·Î.
+    private void LateUpdate() // ï¿½ï¿½ï¿½ Updateï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ó°¡°ï¿½ ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½. Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
     {
         if (canLook)
         {
@@ -81,9 +81,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    bool IsGrounded()  // Ground¿¡ ºÙ¾îÀÖ´ÂÁö ¾Æ´ÑÁö
+    bool IsGrounded()  // Groundï¿½ï¿½ ï¿½Ù¾ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ï¿½ï¿½
     {
-        Ray[] rays = new Ray[4]  // ´Ù¸® 4°³
+        Ray[] rays = new Ray[4]  // ï¿½Ù¸ï¿½ 4ï¿½ï¿½
         {
             new Ray(transform.position + (transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
             new Ray(transform.position + (-transform.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
